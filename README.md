@@ -34,13 +34,13 @@ RegisterCommand("duty", function(source)
 		local str = "You are on duty"
 		
 		if onduty == false then
-				str = "You are not on duty"
+			str = "You are not on duty"
 		end
 
 		TriggerClientEvent("chat:addMessage", Player.source, {
-				color = {255, 255, 255},
-				multiline = true,
-				args = {"Zerio-Duty", str}
+			color = {255, 255, 255},
+			multiline = true,
+			args = {"Zerio-Duty", str}
 		})
 	end
 end)
@@ -64,13 +64,13 @@ RegisterCommand("duty", function()
 	local str = "You are on duty"
 
 	if onduty == false then
-			str = "You are not on duty"
+		str = "You are not on duty"
 	end
 
 	TriggerEvent("chat:addMessage", {
-			color = {255, 255, 255},
-			multiline = true,
-			args = {"Zerio-Duty", str}
+		color = {255, 255, 255},
+		multiline = true,
+		args = {"Zerio-Duty", str}
 	})
 end)
 ```
