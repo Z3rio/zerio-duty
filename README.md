@@ -32,6 +32,9 @@ If you want to contribute to this project, then please do. We are open to any he
 - zerio-duty:server:dutyChange
   > Gets triggered when a players duty value is changed. It passes through the source of the player and also the new duty value.
 
+- zerio-duty:server:toggleDuty
+  > Toggles the duty for the player that triggered this event. (Has to be triggered from the client)
+
 ## Client
 - zerio-duty:client:dutyChange
   > This gets triggered when the local player / clients duty value gets changed. Passes through the new duty value.

@@ -48,6 +48,17 @@ ESX.RegisterServerCallback("zerio-duty:server:getDuty", function(source, cb)
 end)
 
 -- EVENTS
+RegisterNetEvent("zerio-duty:server:toggleDuty")
+AddEventHandler("zerio-duty:server:toggleDuty", function()
+	local Player = ESX.GetPlayer(source)
+
+	if Player then
+		local current = Player.get("onDuty")
+
+		exports["zerio-duty"]:setDuty(Player.identifier, not current)
+	end
+end)
+
 RegisterNetEvent("onResourceStart")
 AddEventHandler("onResourceStart", function()
 	for idx,plr in pairs(ESX.GetExtendedPlayers()) do
