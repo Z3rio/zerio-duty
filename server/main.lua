@@ -21,6 +21,9 @@ function setDuty(identifier, newValue)
 		if type(newValue) == "boolean" then
 			Player.set("onDuty", newValue)
 
+			TriggerServerEvent("zerio-duty:server:dutyChange", Player.source, newValue)
+			TriggerClientEvent("zerio-duty:client:dutyChange", Player.source, newValue)
+
 			if newValue then
 				TriggerClientEvent("esx:showNotification", Player.source, "You are now on duty")
 			else

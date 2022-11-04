@@ -26,6 +26,16 @@ If you want to contribute to this project, then please do. We are open to any he
 - getDuty()
 	> Gets the duty status of the local player / client, returns a boolean (true / false)
 
+# Events
+
+## Server
+- zerio-duty:server:dutyChange
+  > Gets triggered when a players duty value is changed. It passes through the source of the player and also the new duty value.
+
+## Client
+- zerio-duty:client:dutyChange
+  > This gets triggered when the local player / clients duty value gets changed. Passes through the new duty value.
+
 # Examples
 
 ## Server:
