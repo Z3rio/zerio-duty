@@ -2,8 +2,10 @@
 
 # Zerio Duty
 This is a Duty system made for ESX, this is pretty much a library with all the functions and such.<br>
-Making it very easy to link this to any UI or such.<br>
-The upside to this duty system is that in other duty systems it changes the actual job name which messes up other scripts, example: when off duty your job name is "offduty", when on duty your job name is "police".<br>
+Making it very easy to link this to any UI or such.
+<br><br>
+The upside to this duty system is that in other duty systems it changes the actual job name which messes up other scripts, example: when off duty your job name is "offduty", when on duty your job name is "police".
+<br><br>
 **This is not how this script works**, this script does not change your job name, it simply uses player metadata.
 
 # Contribution
