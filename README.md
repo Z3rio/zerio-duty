@@ -1,4 +1,4 @@
-![Untitled](https://user-images.githubusercontent.com/54480523/200033384-bf481dee-a527-4506-a2ad-127ef64a84c5.png)
+![Thumbnail](https://user-images.githubusercontent.com/54480523/200033540-4105e4e7-f6a7-45b7-b084-47ab8a53b21e.png)
 
 # Zerio Duty
 This is a Duty system made for ESX, this is pretty much a library with all the functions and such.<br>
