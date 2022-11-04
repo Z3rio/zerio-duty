@@ -20,6 +20,12 @@ function setDuty(identifier, newValue)
 	if Player then
 		if type(newValue) == "boolean" then
 			Player.set("onDuty", newValue)
+
+			if newValue then
+				TriggerClientEvent("esx:showNotification", Player.source, "You are now on duty")
+			else
+				TriggerClientEvent("esx:showNotification", Player.source, "You are now off duty")
+			end
 		else
 			error("New value for setDuty must be a boolean")
 		end
