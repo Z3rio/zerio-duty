@@ -9,7 +9,7 @@ The upside to this duty system is that in other duty systems it changes the actu
 **This is not how this script works**, this script does not change your job name, it simply uses player metadata.
 
 # Contribution
-If you want to contribute to this project, then please do. We are open to any help at all, simply open a PR (Pull Request) on the Githu Repository, or open an Issue on the Github Repository.
+If you want to contribute to this project, then please do. We are open to any help at all, simply open a PR (Pull Request) on the Github Repository, or open an Issue on the Github Repository.
 
 # Exports
 
