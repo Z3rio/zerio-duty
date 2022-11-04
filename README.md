@@ -92,7 +92,7 @@ end)
 ## ESX Paycheck Integration
 (es_extended/server/paycheck.lua)
 Changed lines: line 11
-```
+```lua
 function StartPayCheck()
   CreateThread(function()
     while true do
