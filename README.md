@@ -34,6 +34,7 @@ If you want to contribute to this project, then please do. We are open to any he
 
 - zerio-duty:server:toggleDuty
   > Toggles the duty for the player that triggered this event. (Has to be triggered from the client)
+  > Works great to be triggered from a "duty marker" / duty change function in a job script.
 
 ## Client
 - zerio-duty:client:dutyChange
