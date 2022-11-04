@@ -36,6 +36,40 @@ function setDuty(identifier, newValue)
 end
 exports("setDuty", setDuty)
 
+function getPlayersOnDuty(jobName)
+	local retVal = {}
+
+	if jobName and type(jobName) == "string" then
+		for idx,plr in pairs(ESX.GetExtendedPlayers()) do
+			if plr.job.name == jobName and plr.get("onDuty") == true then
+				table.insert(retVal, plr)
+			end
+		end
+	else
+		error("Either no job name is passed through, or it is not a string")
+	end
+
+	return retVal
+end
+exports("getPlayersOnDuty", getPlayersOnDuty)
+
+function getPlayersOffDuty(jobName)
+	local retVal = {}
+	
+	if jobName and type(jobName) == "string" then
+		for idx,plr in pairs(ESX.GetExtendedPlayers()) do
+			if plr.job.name == jobName and plr.get("onDuty") == false then
+				table.insert(retVal, plr)
+			end
+		end
+	else
+		error("Either no job name is passed through, or it is not a string")
+	end
+
+	return retVal
+end
+exports("getPlayersOffDuty", getPlayersOffDuty)
+
 -- CALLBACKS
 ESX.RegisterServerCallback("zerio-duty:server:getDuty", function(source, cb)
 	local Player = ESX.GetPlayerFromId(source)

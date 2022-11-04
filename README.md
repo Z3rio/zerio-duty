@@ -20,6 +20,10 @@ If you want to contribute to this project, then please do. We are open to any he
 	> If the player doesnt exist / isnt online, then false will be returned.
 - setDuty(identifier<string>, newValue<boolean>)
 	> Updates the duty status for the inputted player. Doesn't return anything.
+- getPlayersOnDuty(jobName<string>)
+	> Returns a table with all players on duty for a specific job. This is based on ESX.GetExtendedPlayers, therefore the players returned are actual player objects / ESX players.
+- getPlayersOffDuty(jobName<string>)
+	> Returns a table with all players that are off duty for a specific job. This is based on ESX.GetExtendedPlayers, therefore the players returned are actual player objects / ESX players.
 
 ## Client
 
