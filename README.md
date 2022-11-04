@@ -60,17 +60,17 @@ end)
 ## Client:
 ```lua
 RegisterCommand("duty", function()
-		local onduty = exports["zerio-duty"]:getDuty()
-		local str = "You are on duty"
-		
-		if onduty == false then
-				str = "You are not on duty"
-		end
+	local onduty = exports["zerio-duty"]:getDuty()
+	local str = "You are on duty"
 
-		TriggerEvent("chat:addMessage", {
-				color = {255, 255, 255},
-				multiline = true,
-				args = {"Zerio-Duty", str}
-		})
+	if onduty == false then
+			str = "You are not on duty"
+	end
+
+	TriggerEvent("chat:addMessage", {
+			color = {255, 255, 255},
+			multiline = true,
+			args = {"Zerio-Duty", str}
+	})
 end)
 ```
