@@ -51,7 +51,7 @@ end)
 ```
 
 ```lua
-RegisterCommand("setduty", function(source)
+RegisterCommand("changeduty", function(source)
 	local Player = ESX.GetPlayerFromId(source)
 
 	if Player then
