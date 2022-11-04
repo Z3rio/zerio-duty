@@ -93,18 +93,16 @@ AddEventHandler("zerio-duty:server:toggleDuty", function()
 	end
 end)
 
-RegisterNetEvent("onResourceStart")
-AddEventHandler("onResourceStart", function()
-	for idx,plr in pairs(ESX.GetExtendedPlayers()) do
-		if plr.get("onDuty") == nil then
-			plr.set("onDuty", Config.DefaultDuty)
-		end
-	end
-end)
-
 RegisterNetEvent("esx:playerLoaded")
 AddEventHandler("esx:playerLoaded", function(source, plr, isNew)
 	if plr.get("onDuty") == nil then
 		plr.set("onDuty", Config.DefaultDuty)
 	end
 end)
+
+-- ON START
+for idx,plr in pairs(ESX.GetExtendedPlayers()) do
+	if plr.get("onDuty") == nil then
+		plr.set("onDuty", Config.DefaultDuty)
+	end
+end
