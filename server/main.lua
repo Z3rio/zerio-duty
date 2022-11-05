@@ -94,13 +94,11 @@ function getDuty(identifier)
 end
 exports("getDuty", getDuty)
 
-function setDuty(identifier, newValue)
+function setDuty(identifier, newValue, loggingOff, hideNotification)
 	local Player = ESX.GetPlayerFromIdentifier(identifier)
 
 	if Player then
 		if type(newValue) == "boolean" then
-			Player.set("onDuty", newValue)
-
 			if Config.DiscordLogs.enabled then
 				if newValue then
 					timers[identifier] = os.time()
@@ -141,13 +139,19 @@ function setDuty(identifier, newValue)
 				end
 			end
 
-			TriggerEvent("zerio-duty:server:dutyChange", Player.source, newValue)
-			TriggerClientEvent("zerio-duty:client:dutyChange", Player.source, newValue)
+			if loggingOff ~= true then
+				Player.set("onDuty", newValue)
 
-			if newValue then
-				TriggerClientEvent("esx:showNotification", Player.source, "You are now on duty")
-			else
-				TriggerClientEvent("esx:showNotification", Player.source, "You are now off duty")
+				TriggerEvent("zerio-duty:server:dutyChange", Player.source, newValue)
+				TriggerClientEvent("zerio-duty:client:dutyChange", Player.source, newValue)
+
+				if hideNotification ~= true then
+					if newValue then
+						TriggerClientEvent("esx:showNotification", Player.source, "You are now on duty")
+					else
+						TriggerClientEvent("esx:showNotification", Player.source, "You are now off duty")
+					end
+				end
 			end
 		else
 			error("New value for setDuty must be a boolean")
@@ -216,13 +220,19 @@ end)
 RegisterNetEvent("esx:playerLoaded")
 AddEventHandler("esx:playerLoaded", function(source, plr, isNew)
 	if plr.get("onDuty") == nil then
-		exports["zerio-duty"]:setDuty(plr.identifier, Config.DefaultDuty)
+		exports["zerio-duty"]:setDuty(plr.identifier, Config.DefaultDuty, nil, true)
 	end
+end)
+
+RegisterNetEvent("esx:playerDropped")
+AddEventHandler('esx:playerDropped', function(source)
+  local plr = ESX.GetPlayerFromId(source)
+	exports["zerio-duty"]:setDuty(plr.identifier, false, true, nil)
 end)
 
 -- ON START
 for idx,plr in pairs(ESX.GetExtendedPlayers()) do
 	if plr.get("onDuty") == nil then
-		exports["zerio-duty"]:setDuty(plr.identifier, Config.DefaultDuty)
+		exports["zerio-duty"]:setDuty(plr.identifier, Config.DefaultDuty, nil, true)
 	end
 end
