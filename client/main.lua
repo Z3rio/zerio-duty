@@ -19,4 +19,9 @@ Citizen.CreateThread(function()
         return retVal.value
     end
     exports("getDuty", getDuty)
+
+
+    RegisterCommand("changeduty", function()
+      TriggerServerEvent("zerio-duty:server:toggleDuty")
+    end)
 end)

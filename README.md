@@ -97,6 +97,12 @@ RegisterCommand("duty", function()
 end)
 ```
 
+```lua
+RegisterCommand("changeduty", function()
+	TriggerServerEvent("zerio-duty:server:toggleDuty")
+end)
+```
+
 ## ESX Paycheck Integration
 (es_extended/server/paycheck.lua)
 Changed lines: line 11
