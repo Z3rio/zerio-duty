@@ -4,8 +4,8 @@ Config.EnableNotification = true
 
 -- If enabled, duty will be logged, such as how long the player was on duty etc.
 Config.DiscordLogs = {
-	enabled = true,
-	link = "https://discord.com/api/webhooks/1033159707612942468/IGV6fqdd7rJXCAENydt36qQ5bnZeStdg1I1xV7fKrYw7eSkv9-9e-qsvafr6cPjP1Tfn",
+	enabled = false,
+	link = "",
 
 	communityName = "Community Name",
 	username = "Zerio-Duty",
