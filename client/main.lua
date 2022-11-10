@@ -19,4 +19,17 @@ Citizen.CreateThread(function()
         return retVal.value
     end
     exports("getDuty", getDuty)
+
+    function getDutyTime()
+        local retVal = promise.new()
+        
+        ESX.TriggerServerCallback("zerio-duty:server:getDutyTime", function(result)
+            retVal:resolve(result)
+        end)
+
+        Citizen.Await(retVal)
+
+        return retVal.value
+    end
+    exports("getDutyTime", getDutyTime)
 end)

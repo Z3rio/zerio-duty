@@ -24,11 +24,16 @@ If you want to contribute to this project, then please do. We are open to any he
 	> Returns a table with all players on duty for a specific job. This is based on ESX.GetExtendedPlayers, therefore the players returned are actual player objects / ESX players.
 - getPlayersOffDuty(jobName<string>)
 	> Returns a table with all players that are off duty for a specific job. This is based on ESX.GetExtendedPlayers, therefore the players returned are actual player objects / ESX players.
+- getDutyTime(identifier<string>)
+	> Gets the current time in duty for the player with the passed through identifier.
+	> If the player is not on duty, 0 will be returned.
 
 ## Client
 
 - getDuty()
 	> Gets the duty status of the local player / client, returns a boolean (true / false)
+- getDutyTime()
+	> Gets the current duty time of the local player / client. Returns 0 if not on duty.
 
 # Events
 

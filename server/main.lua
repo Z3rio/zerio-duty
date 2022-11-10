@@ -94,6 +94,21 @@ function getDuty(identifier)
 end
 exports("getDuty", getDuty)
 
+function getDutyTime(identifier)
+	local Player = ESX.GetPlayerFromIdentifier(identifier)
+	
+	if Player then
+		if Player.get("onDuty") and timers[identifier] then
+			return timers[identifier]
+		else
+			return 0
+		end
+	else
+		return 0
+	end
+end
+exports("getDutyTime", getDutyTime)
+
 function setDuty(identifier, newValue, loggingOff, hideNotification)
 	local Player = ESX.GetPlayerFromIdentifier(identifier)
 
@@ -203,6 +218,12 @@ ESX.RegisterServerCallback("zerio-duty:server:getDuty", function(source, cb)
 	else
 		cb(false)
 	end
+end)
+
+ESX.RegisterServerCallback("zerio-duty:server:getDutyTime", function(source, cb)
+	local Player = ESX.GetPlayerFromId(source)
+
+	return exports["zerio-duty"]:getDutyTime(Player.identifier)
 end)
 
 -- EVENTS
