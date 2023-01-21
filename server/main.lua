@@ -179,8 +179,8 @@ function getPlayersOnDuty(jobName)
 	local retVal = {}
 
 	if jobName and type(jobName) == "string" then
-		for idx,plr in pairs(ESX.GetExtendedPlayers()) do
-			if plr.job.name == jobName and plr.get("onDuty") == true then
+		for idx,plr in pairs(ESX.GetExtendedPlayers("job",jobName)) do
+			if plr.get("onDuty") == true then
 				table.insert(retVal, plr)
 			end
 		end
@@ -196,8 +196,8 @@ function getPlayersOffDuty(jobName)
 	local retVal = {}
 	
 	if jobName and type(jobName) == "string" then
-		for idx,plr in pairs(ESX.GetExtendedPlayers()) do
-			if plr.job.name == jobName and plr.get("onDuty") == false then
+		for idx,plr in pairs(ESX.GetExtendedPlayers("job",jobName)) do
+			if plr.get("onDuty") == false then
 				table.insert(retVal, plr)
 			end
 		end
